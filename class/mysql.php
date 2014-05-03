@@ -1,5 +1,11 @@
 <?php
 
+	/**
+	 * Klasse für MySQL Funktionalität
+	 *
+	 * @param string $database Zu verbindende Datenbank
+ 	*/
+
 	class SQL {
 
 		public $mysql;
@@ -16,6 +22,12 @@
 
 		}
 
+		/**
+		 * Gibt alle Einträge einer Tabelle zurück
+		 *
+		 * @param string $table Tabellenname
+ 		*/
+
 		public function getEntries($table) {
 
 			$query = mysqli_query($this->mysql, 'SELECT * FROM ' . $table);
@@ -27,6 +39,13 @@
 			return $result;
 
 		}
+
+		/**
+		 * Speichert Daten in einer Tabelle
+		 *
+		 * @param string $table Tabellenname
+		 * @param array $data Array mit Daten
+ 		*/
 
 		public function setEntry($table, $data) {
 

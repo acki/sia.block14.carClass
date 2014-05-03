@@ -1,9 +1,19 @@
  <?php
 
+	/**
+	 * Autoklasse
+	 *
+	 * Macht ein bisschen was mit Autos
+	*/
+
  	class Car {
 
  		private $car;
  		private $mysql;
+
+ 		/**
+		 * Klasse initialisieren
+ 		*/
 
  		public function __construct() {
 
@@ -11,11 +21,13 @@
 
  			echo "Ich bin eine Autoklasse!<br><br>";
 
-
-
  		}
 
- 		public function getCars() {
+ 		/**
+		 * Alle Modelle ausgeben
+ 		*/
+
+ 		public function getModels() {
 
  			$query = $this->mysql->getEntries('models');
 
@@ -28,6 +40,12 @@
  			}
 
  		}
+
+ 		/**
+		 * Neues Modell speichern
+		 *
+		 * @param string $modelname Name des Modells
+ 		*/
 
  		public function setModel($modelname) {
 

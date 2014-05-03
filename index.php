@@ -1,20 +1,26 @@
 <?php
 
+	// Dateien einbinden
 	require_once('class/mysql.php');
-	require_once('class/cars.php');
+	require_once('class/car.php');
 
+	// Neue Autoklasse instanzieren
 	$car = new Car;
 
+	// Überprüfen ob Formulardaten abgesendet wurden
 	if($_POST) {
 
+		// Neues Modell speichern
 		$message = $car->setModel($_POST['model']);
 
 	}
 
-	$car->getCars();
+	// Alle Autos anzeigen
+	$car->getModels();
 
 	echo '<hr>';
 
+	// Formular anzeigen
 	echo '
 		<form method="post">
 
@@ -26,6 +32,7 @@
 		</form>
 	';
 
+	// Meldung anzeigen wenn vorhanden
 	if(isset($message)) {
 		echo '<strong>' . $message . '</strong>';
 	}
